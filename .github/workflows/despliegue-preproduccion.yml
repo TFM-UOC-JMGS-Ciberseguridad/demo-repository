@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run despliegue a preproducción
-        uses: TFM-UOC-JMGS-Ciberseguridad/demo-repository@latest
+        uses: TFM-UOC-JMGS-Ciberseguridad/demo-repository/docker-actions/despliegue-preproduccion/despliegue@latest
