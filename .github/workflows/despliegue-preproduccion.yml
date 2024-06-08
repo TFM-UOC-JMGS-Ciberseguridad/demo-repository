@@ -7,6 +7,10 @@ on:
 jobs:
   despliegue-pre:
     name: Despliegue preproducción
+    env:
+      SF_ACCESS_TOKEN_FILE: /run/secrets/salesforce_token
+      SF_INSTANCE_URL: https://uoctfmciberseguridad3-dev-ed.develop.my.salesforce.com
+      SF_INSTANCE_ALIAS: desarrollo
     runs-on: ubuntu-latest
     steps:
       - name: Run despliegue a preproducción
