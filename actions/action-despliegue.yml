@@ -1,0 +1,6 @@
+# action.yml
+name: 'Despliegue Preproducción Salesforce'
+description: 'Despliega los cambios sobre la instancia de preproducción de Salesforce'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
