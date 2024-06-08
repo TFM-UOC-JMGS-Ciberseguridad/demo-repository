@@ -1,0 +1,4 @@
+name: 'Despliegue'
+descripción: 'Despliegue del contenido del repo a Salesforce'
+run: echo "This step will be skipped on Monday and Wednesday"
+  
