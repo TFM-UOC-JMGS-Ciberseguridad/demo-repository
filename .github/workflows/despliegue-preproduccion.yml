@@ -6,9 +6,10 @@ on:
 
 jobs:
   despliegue-pre:
+    environment: SALESFORCE-TFM
     name: Despliegue preproducción
     env:
-      SF_ACCESS_TOKEN: ${{ secrets.SALESFORCE_TOKEN }} 
+      SF_ACCESS_TOKEN: ${{ secrets.SALESFORCE_JWT }} 
       SF_INSTANCE_URL: https://uoctfmciberseguridad3-dev-ed.develop.my.salesforce.com
       SF_INSTANCE_ALIAS: desarrollo
     runs-on: ubuntu-latest
