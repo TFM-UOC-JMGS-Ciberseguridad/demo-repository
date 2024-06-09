@@ -14,5 +14,7 @@ jobs:
       SF_INSTANCE_ALIAS: desarrollo
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Run despliegue a preproducción
         uses: TFM-UOC-JMGS-Ciberseguridad/demo-repository/docker-actions/despliegue-preproduccion@main
