@@ -9,5 +9,11 @@
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "59.0"
-  "oauthLocalPort" : "1919"
+  "oauthLocalPort" : "1919",
+    "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ]
 }
