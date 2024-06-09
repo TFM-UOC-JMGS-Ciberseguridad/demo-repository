@@ -15,3 +15,7 @@ jobs:
     steps:
       - name: Run despliegue a preproducción
         uses: TFM-UOC-JMGS-Ciberseguridad/demo-repository/docker-actions/despliegue-preproduccion@main
+        with: 
+          secrets: | 
+            "salesforce_token=${{ secrets.SALESFORCE_TOKEN }}"
+          
