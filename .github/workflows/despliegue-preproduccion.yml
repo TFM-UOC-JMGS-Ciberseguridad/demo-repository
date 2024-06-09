@@ -9,9 +9,11 @@ jobs:
     environment: SALESFORCE-TFM
     name: Despliegue preproducción
     env:
-      SF_ACCESS_TOKEN: ${{ secrets.SALESFORCE_JWT }} 
-      SF_INSTANCE_URL: https://uoctfmciberseguridad3-dev-ed.develop.my.salesforce.com
-      SF_INSTANCE_ALIAS: desarrollo
+      SF_INSTANCE_URL: ${{ secrets.SALESFORCE_URL }} 
+      SF_INSTANCE_ALIAS: ${{ secrets.SALESFORCE_ALIAS }} 
+      SF_CLIENT_ID: ${{ secrets.SALESFORCE_CLIENT_ID }} 
+      SF_USERNAME: ${{ secrets.SALESFORCE_USER }} 
+      SF_JWT: ${{ secrets.SALESFORCE_JWT }} 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
