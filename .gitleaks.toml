@@ -6,7 +6,7 @@ useDefault = true
 [[rules]]
 id = 'apex-rule-1'
 description = "Regla para detección de secreto falso en apex"
-regex = '''(?i)(?:secret|key|signature|password|pwd|pass|token)(?:.{0,20})(?:=){1}(?:.{0,10})[\"'`](.{4,120})[\"'`]'''
+regex = '''(?i)(?:secret|key|signature|password|pwd|pass|token|apex)(?:.{0,20})(?:=){1}(?:.{0,10})[\"'`](.{4,120})[\"'`]'''
 tags = ["apex", "secreto"]
 secretGroup = 1
 entropy = 3.5
