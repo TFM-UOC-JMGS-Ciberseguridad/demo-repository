@@ -1,22 +1,18 @@
-name: Despliegue preproducción
-on:   
+on:
+  # Trigger the workflow on push or pull request
   push:
     branches:
       - main
-
 jobs:
-  despliegue-pre:
-    environment: SALESFORCE-TFM
-    name: Despliegue preproducción
-    env:
-      SF_INSTANCE_URL: ${{ secrets.SALESFORCE_URL }} 
-      SF_INSTANCE_ALIAS: ${{ secrets.SALESFORCE_ALIAS }} 
-      SF_CLIENT_ID: ${{ secrets.SALESFORCE_CLIENT_ID }} 
-      SF_USERNAME: ${{ secrets.SALESFORCE_USER }} 
-      SF_JWT: ${{ secrets.SALESFORCE_JWT }} 
+  comment:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Run despliegue a preproducción
-        uses: TFM-UOC-JMGS-Ciberseguridad/demo-repository/docker-actions/despliegue-preproduccion@main
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!'
+            })
