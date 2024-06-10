@@ -1,6 +1,7 @@
 public with sharing class BasicArithmetics {
 
-    String secret = '12345-12345-1112345-1234';
+    
+    String Secret = "60f41f67-b43b-4552-bb80-f2f29b861ef0"
     String apex_token = 'AMFDGNIAEIRGE24345EFSDFS';
     String apex_password = 'mySecretPassword';
     String password = 'testRegex';
