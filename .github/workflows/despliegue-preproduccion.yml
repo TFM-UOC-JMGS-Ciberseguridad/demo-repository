@@ -1,19 +1,16 @@
-on: 
- pull_request:
-    branches:
-     - main
-     - preproduccion
-
+name: gitleaks
+on:
+  pull_request:
+  push:
 jobs:
-  welcome:
+  scan:
+    name: gitleaks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v7
+      - uses: actions/checkout@v4
         with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'Recuerda realizar el análisis DAST con ZAP después del despliegue en el entorno de Salesforce.'
-            })
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}} # Only required for Organizations, not personal accounts.
